@@ -317,7 +317,7 @@ void EquipTrophy(const char* pTrophy, const char* pSlot)
 				iStep = 2;
 			}
 			else if (iStep == 2) {
-				if (Cursor() && !_stricmp(Cursor()->GetItemDefinition()->Name, pTrophy)) {
+				if (Cursor() && !_stricmp(Cursor()->GetName(), pTrophy)) {
 					WriteChatf("%s\aySwapping: \ap%s\aw into slot: \ay%s", pluginname.c_str(), pTrophy, pSlot);
 					sprintf_s(szBuffer, "/squelch /nomodkey /shiftkey /itemnotify %s leftmouseup", pSlot);
 					EzCommand(szBuffer);
@@ -343,7 +343,7 @@ bool IsTrophyEquipped(const std::string& trophy)
 
 CONTENTS* Cursor()
 {
-	return GetPcProfile()->InventoryContainer.GetItem(InvSlot_Cursor);
+	return GetPcProfile()->GetInventorySlot(InvSlot_Cursor);
 }
 
 inline bool InGame()
