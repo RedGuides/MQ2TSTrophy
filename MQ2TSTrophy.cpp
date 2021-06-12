@@ -77,92 +77,92 @@ public:
 
 	virtual bool GetMember(MQVarPtr VarPtr, const char* Member, char* Index, MQTypeVar& Dest) override
 	{
-		PMQ2TYPEMEMBER pMember = MQ2TrophyType::FindMember(Member);
+		MQTypeMember* pMember = MQ2TrophyType::FindMember(Member);
 		if (!pMember)
 			return false;
 		if (!pLocalPlayer)
 			return false;
 		switch ((TrophyMembers)pMember->ID)
 		{
-		case Version:
-			Dest.Float = MQ2Version;
-			Dest.Type = mq::datatypes::pFloatType;
-			return true;
-		case Matches: // this will return true/false if our equipped tradeskill trophy matches the world/enviro container we are in
-			Dest.DWord = bMatches;
-			Dest.Type = mq::datatypes::pBoolType;
-			return true;
-		case Alchemy:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Alchemy").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Baking:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Baking").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Brewing:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Brewing").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Fletching:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Fletching").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Jewelry:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Jewelry").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Tinkering:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Tinkering").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Pottery:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Pottery").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Research:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Research").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Blacksmithing:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Blacksmithing").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Tailoring:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Tailoring").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Poison:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Poison").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Fishing:
-			strcpy_s(DataTypeTemp, TrophyCheckByType("Fishing").c_str());
-			Dest.Ptr = DataTypeTemp;
-			Dest.Type = mq::datatypes::pStringType;
-			return true;
-		case Container: // this returns true/false if we see a world/enviro tradeskill container
-			Dest.DWord = containerfound;
-			Dest.Type = mq::datatypes::pBoolType;
-			return true;
-		default:
-			break;
+			case Version:
+				Dest.Float = MQ2Version;
+				Dest.Type = mq::datatypes::pFloatType;
+				return true;
+			case Matches: // this will return true/false if our equipped tradeskill trophy matches the world/enviro container we are in
+				Dest.DWord = bMatches;
+				Dest.Type = mq::datatypes::pBoolType;
+				return true;
+			case Alchemy:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Alchemy").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Baking:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Baking").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Brewing:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Brewing").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Fletching:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Fletching").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Jewelry:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Jewelry").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Tinkering:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Tinkering").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Pottery:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Pottery").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Research:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Research").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Blacksmithing:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Blacksmithing").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Tailoring:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Tailoring").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Poison:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Poison").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Fishing:
+				strcpy_s(DataTypeTemp, TrophyCheckByType("Fishing").c_str());
+				Dest.Ptr = DataTypeTemp;
+				Dest.Type = mq::datatypes::pStringType;
+				return true;
+			case Container: // this returns true/false if we see a world/enviro tradeskill container
+				Dest.DWord = containerfound;
+				Dest.Type = mq::datatypes::pBoolType;
+				return true;
+			default:
+				break;
 		}
 		return false;
 	}
 
-	bool ToString(MQ2VARPTR VarPtr, char* Destination)
+	bool ToString(MQVarPtr VarPtr, const char* Destination)
 	{
 		return true;
 	}
@@ -170,7 +170,7 @@ public:
 
 MQ2TrophyType* pTrophyType = nullptr;
 
-BOOL TrophyData(char* szIndex, MQ2TYPEVAR& Dest)
+bool TrophyData(const char* szIndex, MQTypeVar& Dest)
 {
 	Dest.DWord = 1;
 	Dest.Type = pTrophyType;
@@ -229,7 +229,7 @@ PLUGIN_API void OnPulse()
 		else if (strstr(szContainerName, "Fletching Table")) {
 			type = "Fletching";
 		}
-		else if (strstr(szContainerName, "Jewelry Making Table") ) {
+		else if (strstr(szContainerName, "Jewelry Making Table")) {
 			type = "Jewelry";
 		}
 		else if (strstr(szContainerName, "Fly Making Bench")) {
@@ -317,11 +317,13 @@ void EquipTrophy(const char* pTrophy, const char* pSlot)
 				iStep = 2;
 			}
 			else if (iStep == 2) {
-				if (Cursor() && !_stricmp(Cursor()->Item2->Name, pTrophy)) {
-					WriteChatf("%s\aySwapping: \ap%s\aw into slot: \ay%s", pluginname.c_str(), pTrophy, pSlot);
-					sprintf_s(szBuffer, "/squelch /nomodkey /shiftkey /itemnotify %s leftmouseup", pSlot);
-					EzCommand(szBuffer);
-					iStep = 3;
+				if (ItemClient* pCursor = Cursor()) {
+					if (!_stricmp(pCursor->GetName(), pTrophy)) {
+						WriteChatf("%s\aySwapping: \ap%s\aw into slot: \ay%s", pluginname.c_str(), pTrophy, pSlot);
+						sprintf_s(szBuffer, "/squelch /nomodkey /shiftkey /itemnotify %s leftmouseup", pSlot);
+						EzCommand(szBuffer);
+						iStep = 3;
+					}
 				}
 			}
 		}
@@ -333,7 +335,7 @@ bool IsTrophyEquipped(const std::string& trophy)
 	bool equipped = false;
 	for (const auto& i : vSlot) {
 		if (PCONTENTS pItem = FindItemBySlot(i)) {
-			if (pItem->Item2->Name == trophy) {
+			if (pItem->GetItemDefinition()->Name == trophy) {
 				equipped = true;
 			}
 		}
@@ -341,18 +343,14 @@ bool IsTrophyEquipped(const std::string& trophy)
 	return equipped;
 }
 
-CONTENTS* Cursor()
+ItemClient* Cursor()
 {
-	PCHARINFO2 pChar2 = GetCharInfo2();
-	if (pChar2 && pChar2->pInventoryArray && pChar2->pInventoryArray->Inventory.Cursor) {
-		return pChar2->pInventoryArray->Inventory.Cursor;
-	}
-	return nullptr;
+	return GetPcProfile()->GetInventorySlot(InvSlot_Cursor);
 }
 
 inline bool InGame()
 {
-	return (GetGameState() == GAMESTATE_INGAME && GetCharInfo() && GetCharInfo()->pSpawn && GetCharInfo2());
+	return (GetGameState() == GAMESTATE_INGAME && GetCharInfo() && GetCharInfo()->pSpawn && GetPcProfile());
 }
 
 std::map <const std::string, std::vector<std::string> > mTrophies = {
