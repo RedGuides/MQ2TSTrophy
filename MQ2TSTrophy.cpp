@@ -317,11 +317,13 @@ void EquipTrophy(const char* pTrophy, const char* pSlot)
 				iStep = 2;
 			}
 			else if (iStep == 2) {
-				if (Cursor() && !_stricmp(Cursor()->GetName(), pTrophy)) {
-					WriteChatf("%s\aySwapping: \ap%s\aw into slot: \ay%s", pluginname.c_str(), pTrophy, pSlot);
-					sprintf_s(szBuffer, "/squelch /nomodkey /shiftkey /itemnotify %s leftmouseup", pSlot);
-					EzCommand(szBuffer);
-					iStep = 3;
+				if (ItemClient* pCursor = Cursor()) {
+					if (!_stricmp(pCursor->GetName(), pTrophy)) {
+						WriteChatf("%s\aySwapping: \ap%s\aw into slot: \ay%s", pluginname.c_str(), pTrophy, pSlot);
+						sprintf_s(szBuffer, "/squelch /nomodkey /shiftkey /itemnotify %s leftmouseup", pSlot);
+						EzCommand(szBuffer);
+						iStep = 3;
+					}
 				}
 			}
 		}
@@ -341,7 +343,7 @@ bool IsTrophyEquipped(const std::string& trophy)
 	return equipped;
 }
 
-CONTENTS* Cursor()
+ItemClient* Cursor()
 {
 	return GetPcProfile()->GetInventorySlot(InvSlot_Cursor);
 }
