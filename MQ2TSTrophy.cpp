@@ -18,7 +18,7 @@ void EquipTrophy(const char* pTrophy, const char* pSlot = "Ammo"); // Defaulted 
 
 std::string TrophyCheckByType(const std::string& trophytype);
 bool IsTrophyEquipped(const std::string& trophy);
-CONTENTS* Cursor();
+ItemClient* Cursor();
 
 bool containerfound = false;
 bool bMatches = false;
@@ -26,10 +26,12 @@ char szContainerName[32] = { 0 };
 int iStep = 1;
 int iPulse = 0;
 
-// TODO::
-// InventorySlot::ammo, InventorySlot::ranged, InventorySlot::mainhand, InventorySlot::offhand
-// should be an InventorySlot list - sent to mule
-const std::vector<int> vSlot = { 22, 11, 13, 14 };
+const std::vector<int> vSlot = {
+	eInventorySlot::InvSlot_Ammo,
+	eInventorySlot::InvSlot_Range,
+	eInventorySlot::InvSlot_Primary,
+	eInventorySlot::InvSlot_Secondary
+};
 
 class MQ2TrophyType : public MQ2Type
 {
@@ -261,8 +263,11 @@ PLUGIN_API void OnPulse()
 			auto needtrophy = TrophyCheckByType(type);
 			if (!needtrophy.empty() && !IsTrophyEquipped(needtrophy)) {
 				bMatches = false;
-				if (type == "Fishing")
-					EquipTrophy(needtrophy.c_str(), "Mainhand"); // Fishing is the only item that requires mainhand
+				if (type == "Fishing" || (type == "Tailoring" && string_equals(needtrophy, "Blessed Akhevan Shadow Shears"))) {
+					// Fishing is the only item that requires mainhand
+					// Blessed Ahkevan Shadow Shears requires pri or secondary
+					EquipTrophy(needtrophy.c_str(), "Mainhand");
+				}
 				else
 					EquipTrophy(needtrophy.c_str());
 			}
@@ -291,9 +296,9 @@ PLUGIN_API void OnZoned()
 bool WorldContainerCheck()
 {
 	if (CContainerMgr* pWnd = pContainerMgr) {
-		PCONTENTS thiscontaineritem = pWnd->pWorldContainer;
+		ItemClient* thiscontaineritem = pWnd->pWorldContainer;
 		if (thiscontaineritem && thiscontaineritem->Open == 1) {
-			if (PITEMINFO worldContainer = GetItemFromContents(thiscontaineritem)) {
+			if (ItemDefinition* worldContainer = GetItemFromContents(thiscontaineritem)) {
 				strcpy_s(szContainerName, worldContainer->Name);
 				containerfound = true;
 			}
@@ -334,7 +339,7 @@ bool IsTrophyEquipped(const std::string& trophy)
 {
 	bool equipped = false;
 	for (const auto& i : vSlot) {
-		if (PCONTENTS pItem = FindItemBySlot(i)) {
+		if (ItemClient* pItem = FindItemBySlot(i)) {
 			if (pItem->GetItemDefinition()->Name == trophy) {
 				equipped = true;
 			}
@@ -408,14 +413,14 @@ std::map <const std::string, std::vector<std::string> > mTrophies = {
 		}
 	},
 
-	{ "Poison" , {
+	{ "Poison", {
 		"Peerless Pestle", "Master Toxicologist Trophy", "Expert Toxicologist Trophy", "Journeyman Toxicologist Trophy",
 		"Freshman Toxicologist Trophy", "Apprentice Toxicologist Trophy", "Beginner Toxicologist Trophy"
 		}
 	},
 
 	{ "Tailoring", {
-		"Mystical Bolt", "Master Tailor Trophy", "Expert Tailor Trophy", "Journeyman Tailor Trophy",
+		"Blessed Akhevan Shadow Shears", "Mystical Bolt", "Master Tailor Trophy", "Expert Tailor Trophy", "Journeyman Tailor Trophy",
 		"Freshman Tailor Trophy", "Apprentice Tailor Trophy", "Beginner Tailor Trophy"
 		}
 	},
