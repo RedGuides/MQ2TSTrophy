@@ -360,68 +360,88 @@ inline bool InGame()
 
 std::map <const std::string, std::vector<std::string> > mTrophies = {
 	{ "Alchemy", {
+		// Mundunugu: 15%|50, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Mundunugu Medicine Stick", "Master Alchemist Trophy", "Expert Alchemist Trophy", "Journeyman Alchemist Trophy",
 		"Freshman Alchemist Trophy", "Apprentice Alchemist Trophy", "Beginner Alchemist Trophy"
 		}
 	},
 
 	{ "Baking", {
+		// Denmother's: 15%|50, 15%|50, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Denmother's Rolling Pin", "Master Baker Trophy", "Expert Baker Trophy", "Journeyman Baker Trophy",
-		"Freshman Baker Trophy", "Apprentice Baker Trophy", "Beginner Baker Trophy"
+		"Grandmaster Baker's Spoon", "Freshman Baker Trophy", "Apprentice Baker Trophy", "Beginner Baker Trophy"
 		}
 	},
 
 	{ "Brewing", {
+		// Brewmaster's: 15%|50, 15%|50, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Brewmaster's Mug", "Master Brewer Trophy", "Expert Brewer Trophy", "Journeyman Brewer Trophy",
-		"Freshman Brewer Trophy", "Apprentice Brewer Trophy", "Beginner Brewer Trophy"
+		"Grandmaster Brewer's Corker", "Freshman Brewer Trophy", "Apprentice Brewer Trophy", "Beginner Brewer Trophy"
 		}
 	},
 
 	{ "Fletching", {
+		// Fletcher's: 15%|50, 15%|50, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Fletcher's Arrow", "Master Fletcher Trophy", "Expert Fletcher Trophy", "Journeyman Fletcher Trophy",
-		"Freshman Fletcher Trophy", "Apprentice Fletcher Trophy", "Beginner Fletcher Trophy"
+		"Grandmaster Fletcher's Knife", "Freshman Fletcher Trophy", "Apprentice Fletcher Trophy", "Beginner Fletcher Trophy"
 		}
 	},
 
 	{ "Jewelry", {
+		// Intricate: 15%|50, 15%|50, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Intricate Jewelers Glass", "Master Jeweler Trophy", "Expert Jeweler Trophy", "Journeyman Jeweler Trophy",
-		"Freshman Jeweler Trophy", "Apprentice Jeweler Trophy", "Beginner Jeweler Trophy"
+		"Grandmaster Jeweler's Eyeglass", "Freshman Jeweler Trophy", "Apprentice Jeweler Trophy", "Beginner Jeweler Trophy"
 		}
 	},
 
 	{ "Tinkering", {
+		// Hovering: 15%|50, 15%|50, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Hovering Contraption", "Master Mechanist Trophy", "Expert Mechanist Trophy", "Journeyman Mechanist Trophy",
-		"Freshman Mechanist Trophy", "Apprentice Mechanist Trophy", "Beginner Mechanist Trophy"
+		"Grandmaster Tinkerer's Spanner", "Freshman Mechanist Trophy", "Apprentice Mechanist Trophy", "Beginner Mechanist Trophy"
 		}
 	},
 
 	{ "Pottery", {
-		"Clay Flinger's Loop", "Master Potter Trophy", "Expert Potter Trophy", "Journeyman Potter Trophy", "Freshman Potter Trophy",
-		"Apprentice Potter Trophy", "Beginner Potter Trophy"
+		// Clay: 15%|50, 15%|50, Master:12%|36, Expert: 8%|24, Journey: 5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
+		"Clay Flinger's Loop", "Master Potter Trophy", "Expert Potter Trophy", "Journeyman Potter Trophy", "Grandmaster Potter's Sculpter", 
+		"Freshman Potter Trophy", "Apprentice Potter Trophy", "Beginner Potter Trophy"
 		}
 	},
 
 	{ "Research", {
+		// Brewmaster's: 15%|50, Master: 12%|36, Expert: 8%|24, Journey: 5%|12, Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Ethereal Quill", "Master Researcher Trophy", "Expert Researcher Trophy", "Journeyman Researcher Trophy",
 		"Freshman Researcher Trophy", "Apprentice Researcher Trophy", "Beginner Researcher Trophy"
 		}
 	},
 
 	{ "Blacksmithing", {
-		"Blacksmith's Adamantine Hammer", "Master Smith Trophy", "Expert Smith Trophy", "Journeyman Smith Trophy",
-		"Freshman Smith Trophy", "Apprentice Smith Trophy", "Beginner Smith Trophy"
+		// Blacksmith's: 15%|50, Hammer: 15%|45, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
+		"Blacksmith's Adamantine Hammer", "Hammer of the Ironfrost", "Master Smith Trophy", "Expert Smith Trophy", "Journeyman Smith Trophy",
+		"Grandmaster Smith's Hammer", "Freshman Smith Trophy", "Apprentice Smith Trophy", "Beginner Smith Trophy"
 		}
 	},
 
 	{ "Poison", {
+		// Peerless: 15%|50, Master: 12%|36, Expert: 8%|24, Journey: 5%|12, Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3  
 		"Peerless Pestle", "Master Toxicologist Trophy", "Expert Toxicologist Trophy", "Journeyman Toxicologist Trophy",
 		"Freshman Toxicologist Trophy", "Apprentice Toxicologist Trophy", "Beginner Toxicologist Trophy"
 		}
 	},
 
 	{ "Tailoring", {
+		// Blessed: 15%|50, Mytical: 15%|45, Master: 12%|36, Expert: 8%|24, Journey:5%|12, Grandnmaster (old): 5%|12,
+		// Freshman: 4%|12, Apprentice: %2|6, Beginner:1%|3
 		"Blessed Akhevan Shadow Shears", "Mystical Bolt", "Master Tailor Trophy", "Expert Tailor Trophy", "Journeyman Tailor Trophy",
-		"Freshman Tailor Trophy", "Apprentice Tailor Trophy", "Beginner Tailor Trophy"
+		"Grandmaster Tailor's Needle", "Freshman Tailor Trophy", "Apprentice Tailor Trophy", "Beginner Tailor Trophy"
 		}
 	},
 
