@@ -96,62 +96,62 @@ public:
 				return true;
 			case Alchemy:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Alchemy").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Baking:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Baking").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Brewing:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Brewing").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Fletching:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Fletching").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Jewelry:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Jewelry").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Tinkering:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Tinkering").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Pottery:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Pottery").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Research:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Research").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Blacksmithing:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Blacksmithing").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Tailoring:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Tailoring").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Poison:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Poison").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Fishing:
 				strcpy_s(DataTypeTemp, TrophyCheckByType("Fishing").c_str());
-				Dest.Ptr = DataTypeTemp;
+				Dest.Ptr = &DataTypeTemp[0];
 				Dest.Type = mq::datatypes::pStringType;
 				return true;
 			case Container: // this returns true/false if we see a world/enviro tradeskill container
