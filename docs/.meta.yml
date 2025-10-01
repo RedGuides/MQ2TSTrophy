@@ -1,0 +1,5 @@
+docs_repository: "https://github.com/Redbot/MQ2TSTrophy"
+docs_edit_uri: "edit/readguides/"
+docs_path_transform:
+  from: "projects/mq2tstrophy/"
+  to: "docs/"
