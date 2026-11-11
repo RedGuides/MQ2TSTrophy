@@ -10,9 +10,9 @@ Holds the Trophy datatype.
 
 ## Forms
 <!--tlo-forms-start-->
-### {{ renderMember(type='Trophy', name='Trophy') }}
-
-:   returns "Trophy"
+/// member | Trophy Trophy
+returns "Trophy"
+///
 
 <!--tlo-forms-end-->
 
