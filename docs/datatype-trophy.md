@@ -10,57 +10,57 @@ Contains data from MQ2TSTrophy
 
 ## Members
 <!--dt-members-start-->
-### {{ renderMember(type='float', name='Version') }}
+/// member | float Version
+* Returns the numerical value of this setting.
+///
 
-:   * Returns the numerical value of this setting.
+/// member | bool Matches
+* returns true/false if our equipped tradeskill trophy matches the world/environmental container we are in.
+///
 
-### {{ renderMember(type='bool', name='Matches') }}
+/// member | bool Container
+* Returns true/false if we see a world/environmental container.
+///
 
-:   * returns true/false if our equipped tradeskill trophy matches the world/environmental container we are in.
+/// member | string Alchemy
+* Returns the name of our Alchemy trophy.
+///
 
-### {{ renderMember(type='bool', name='Container') }}
+/// member | string Brewing
+* Returns the name of our Brewing trophy.
+///
 
-:   * Returns true/false if we see a world/environmental container.
+/// member | string Fletching
+* Returns the name of our Fletching trophy.
+///
 
-### {{ renderMember(type='string', name='Alchemy') }}
+/// member | string Jewelry
+* Returns the name of our Jewelry trophy.
+///
 
-:   * Returns the name of our Alchemy trophy.
+/// member | string Tinkering
+* Returns the name of our Tinkering trophy.
+///
 
-### {{ renderMember(type='string', name='Brewing') }}
+/// member | string Pottery
+* Returns the name of our Pottery trophy.
+///
 
-:   * Returns the name of our Brewing trophy.
+/// member | string Blacksmithing
+* Returns the name of our Blacksmithing trophy.
+///
 
-### {{ renderMember(type='string', name='Fletching') }}
+/// member | string Tailoring
+* Returns the name of our Tailoring trophy.
+///
 
-:   * Returns the name of our Fletching trophy.
+/// member | string Poison
+* Returns the name of our Poison trophy.
+///
 
-### {{ renderMember(type='string', name='Jewelry') }}
-
-:   * Returns the name of our Jewelry trophy.
-
-### {{ renderMember(type='string', name='Tinkering') }}
-
-:   * Returns the name of our Tinkering trophy.
-
-### {{ renderMember(type='string', name='Pottery') }}
-
-:   * Returns the name of our Pottery trophy.
-
-### {{ renderMember(type='string', name='Blacksmithing') }}
-
-:   * Returns the name of our Blacksmithing trophy.
-
-### {{ renderMember(type='string', name='Tailoring') }}
-
-:   * Returns the name of our Tailoring trophy.
-
-### {{ renderMember(type='string', name='Poison') }}
-
-:   * Returns the name of our Poison trophy.
-
-### {{ renderMember(type='string', name='Fishing') }}
-
-:   * Returns the name of our Fishing trophy.
+/// member | string Fishing
+* Returns the name of our Fishing trophy.
+///
 
 <!--dt-members-end-->
 
